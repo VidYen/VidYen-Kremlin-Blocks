@@ -1,5 +1,9 @@
 
-var sfbg_br_started = false;	
+var sfbg_br_started = false;
+var sfbg_br_t1 = 'No clue?';
+var sfbg_br_t2 = 'Play?';
+var sfbg_br_t3 = 'SUKA BLYAT?';
+var sfbg_br_t4 = 'random score?';
 sfbg_br_show_reward = function(faucet_id)
 {
 	document.querySelector('.sfbg_br_game').style.display = 'none';
@@ -7,15 +11,15 @@ sfbg_br_show_reward = function(faucet_id)
 	document.getElementById('sfbg_br_faucet-TO-BE').id = 'wmexp-faucet-'+faucet_id;
 	var script = document.createElement('script');
 	script.src = 'https://wmexp.com/faucet/'+faucet_id+'/';
-	document.head.appendChild(script);  	
+	document.head.appendChild(script);
 }
 
     jQuery(document).ready(function () {
-	
+
 		 jQuery('.sfbg_br_game').blockrain(
-		 { 
+		 {
 			autoplay: false,
-			autoplayRestart: false, 
+			autoplayRestart: false,
 			showFieldOnStart: true,
 			theme: null,
 			playText: sfbg_br_t1,
