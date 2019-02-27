@@ -25,16 +25,16 @@ function videyen_kremlin_blocks_sql_install()
 		//NOTE: I have the mind to make mediumint to int, but I wonder if you get 8 million log transactios that you should consider another solution than VYPS.
 
 		//videyen_kremlin_blocks table creation
-    $table_name_poker = $wpdb->prefix . 'videyen_kremlin_blocks';
+    $table_name_kremlin = $wpdb->prefix . 'videyen_kremlin_blocks';
 
-    $sql = "CREATE TABLE {$table_name_poker} (
-		id mediumint(9) NOT NULL AUTO_INCREMENT,
-		input_point_id mediumint(9) NOT NULL,
-    input_amount mediumint(9) NOT NULL,
-    output_point_id mediumint(9) NOT NULL,		
-		win_multi float(53) NOT NULL,
-		PRIMARY KEY  (id)
-        ) {$charset_collate};";
+    $sql = "CREATE TABLE {$table_name_kremlin} (
+  		id mediumint(9) NOT NULL AUTO_INCREMENT,
+  		input_point_id mediumint(9) NOT NULL,
+      input_amount mediumint(9) NOT NULL,
+      output_point_id mediumint(9) NOT NULL,
+  		win_multi float(53) NOT NULL,
+  		PRIMARY KEY  (id)
+    ) {$charset_collate};";
 
     require_once (ABSPATH . 'wp-admin/includes/upgrade.php'); //I never did investigate why the original outsource dev used this.
 
@@ -42,10 +42,11 @@ function videyen_kremlin_blocks_sql_install()
 
 		//Default data
 		$data_insert = [
-				'point_id' => 1,
-				'maximum_bet' => 100,
+				'input_point_id' => 1,
+        'input_amount' => 1,
+				'output_point_id' => 2,
 				'win_multi' => 1,
 		];
 
-		$wpdb->insert($table_name_poker, $data_insert);
+		$wpdb->insert($table_name_kremlin, $data_insert);
 }
