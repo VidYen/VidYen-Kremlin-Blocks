@@ -58,31 +58,17 @@ function vidyen_kremlin_blocks_menu_page()
 	    $message = "Added successfully.";
 	}
 
-	//the $wpdb stuff to find what the current name and icons are
-	$table_name_kremlin = $wpdb->prefix . 'vidyen_kremlin_blocks';
-
-	$first_row = 1; //Note sure why I'm setting this.
-
 	//input_point_id pull
-	$input_point_id_query = "SELECT input_point_id FROM ". $table_name_kremlin . " WHERE id= %d"; //I'm not sure if this is resource optimal but it works. -Felty
-	$input_point_id_query_prepared = $wpdb->prepare( $input_point_id_query, $first_row );
-	$input_point_id = $wpdb->get_var( $input_point_id_query_prepared );
+  $input_point_id = vidyen_kremlin_blocks_input_point_id();
 
   //input_point_amount pull
-  $input_point_amount_query = "SELECT input_point_amount FROM ". $table_name_kremlin . " WHERE id= %d"; //I'm not sure if this is resource optimal but it works. -Felty
-  $input_point_amount_query_prepared = $wpdb->prepare( $input_point_amount_query, $first_row );
-  $input_point_amount = $wpdb->get_var( $input_point_amount_query_prepared );
+  $input_point_amount = vidyen_kremlin_blocks_input_point_amount();
 
-  //output_point_amount pull
-  $output_point_id_query = "SELECT output_point_id FROM ". $table_name_kremlin . " WHERE id= %d"; //I'm not sure if this is resource optimal but it works. -Felty
-  $output_point_id_query_prepared = $wpdb->prepare( $output_point_id_query, $first_row );
-  $output_point_id = $wpdb->get_var( $output_point_id_query_prepared );
+  //output_point_id pull
+  $output_point_id = vidyen_kremlin_blocks_output_point_id();
 
 	//multi pull
-	$win_multi_query = "SELECT win_multi FROM ". $table_name_kremlin . " WHERE id= %d"; //I'm not sure if this is resource optimal but it works. -Felty
-	$win_multi_query_prepared = $wpdb->prepare( $win_multi_query, $first_row );
-	$win_multi = $wpdb->get_var( $win_multi_query_prepared );
-
+  $win_multi = vidyen_kremlin_blocks_win_multi();
 
 	//Just setting to 1 if nothing else I suppose, but should always be something
 	if ($input_point_id == '')
