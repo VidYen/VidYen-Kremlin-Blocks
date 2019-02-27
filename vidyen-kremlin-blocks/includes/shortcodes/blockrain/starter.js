@@ -1,9 +1,9 @@
 
 var sfbg_br_started = false;
-var sfbg_br_t1 = 'No clue?';
-var sfbg_br_t2 = 'Play?';
-var sfbg_br_t3 = 'SUKA BLYAT?';
-var sfbg_br_t4 = 'random score?';
+var sfbg_br_t1 = 'Welcome to Kremlin Blocks!';
+var sfbg_br_t2 = 'Insert Points';
+var sfbg_br_t3 = 'Game Over';
+var sfbg_br_t4 = 'Score:';
 sfbg_br_show_reward = function(faucet_id)
 {
 	document.querySelector('.sfbg_br_game').style.display = 'none';

@@ -4,12 +4,17 @@
  * Plugin URI: http://vidyen.com
  * Description: A Tetris like game for the VidYen Point System
  * Author: VidYen, LLC
- * Version: 0.0.4
+ * Version: 0.0.5
  * Author URI: http://vidyen.com
  * License: GPLv2
 */
 
-//This might all we need for riht now.
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
+
+//Menu Include
+include_once( dirname(__FILE__) . DIRECTORY_SEPARATOR .  'vidyen-kremlin-blocks-menu.php'); //SBFG_WP_get_poker_init
+
+//Shortcode include
 include_once( dirname(__FILE__) . DIRECTORY_SEPARATOR .  'includes/shortcodes/vidyen-kremlin-blocks-shortcode.php'); //SBFG_WP_get_poker_init
 
 register_activation_hook(__FILE__, 'videyen_kremlin_blocks_sql_install');
