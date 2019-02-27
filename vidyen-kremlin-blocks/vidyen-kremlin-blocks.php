@@ -4,7 +4,7 @@
  * Plugin URI: http://vidyen.com
  * Description: A Tetris like game for the VidYen Point System
  * Author: VidYen, LLC
- * Version: 0.0.13
+ * Version: 0.0.14
  * Author URI: http://vidyen.com
  * License: GPLv2
 */
