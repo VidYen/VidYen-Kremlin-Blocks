@@ -24,29 +24,31 @@ function vidyen_kremlin_blocks_menu_page()
 	{
 		//As the post is the only thing that edits data, I suppose this is the best place to the noce
 		$vyps_nonce_check = $_POST['vypsnoncepost'];
-		if ( ! wp_verify_nonce( $vyps_nonce_check, 'vyps-nonce' ) ) {
+		if ( ! wp_verify_nonce( $vyps_nonce_check, 'vyps-nonce' ) )
+    {
 				// This nonce is not valid.
 				die( 'Security check' );
-		} else {
-				// The nonce was valid.
-				// Do stuff here.
 		}
 
-		//ID Text value
+		//I have no idea why I kept the old comments.
 		$input_point_id = abs(intval($_POST['input_point_id'])); //Even though I am in the believe if an admin sql injects himself, we got bigger issues, but this has been sanitized.
 
-		//The icon. I'm suprised this works so well
-		$max_bet = abs(intval($_POST['max_bet']));
+		//Input amount
+		$input_point_amount = abs(intval($_POST['input_point_amount']));
 
-		//The icon. I'm suprised this works so well
+    //Output point from post
+    $output_point_id = abs(intval($_POST['output_point_id']));
+
+		//Should I ever use ajax for this
 		$win_multi = abs(floatval($_POST['win_multi']));
 
-    $table_name_kremlin = $wpdb->prefix . 'videyen_kremlin_blocks';
+    $table_name_kremlin = $wpdb->prefix . 'vidyen_kremlin_blocks';
 
 	    $data = [
-	        'input_point_id' => $input_point_id,
-	        'maximum_bet' => $max_bet,
-					'win_multi' => $win_multi,
+					'input_point_id' => $input_point_id,
+          'input_point_amount' => $input_point_amount,
+          'output_point_id' => $output_point_id,
+          'win_multi' => $win_multi,
 	    ];
 
 			$wpdb->update($table_name_kremlin, $data, ['id' => 1]);
@@ -57,7 +59,7 @@ function vidyen_kremlin_blocks_menu_page()
 	}
 
 	//the $wpdb stuff to find what the current name and icons are
-	$table_name_kremlin = $wpdb->prefix . 'videyen_kremlin_blocks';
+	$table_name_kremlin = $wpdb->prefix . 'vidyen_kremlin_blocks';
 
 	$first_row = 1; //Note sure why I'm setting this.
 
@@ -65,6 +67,16 @@ function vidyen_kremlin_blocks_menu_page()
 	$input_point_id_query = "SELECT input_point_id FROM ". $table_name_kremlin . " WHERE id= %d"; //I'm not sure if this is resource optimal but it works. -Felty
 	$input_point_id_query_prepared = $wpdb->prepare( $input_point_id_query, $first_row );
 	$input_point_id = $wpdb->get_var( $input_point_id_query_prepared );
+
+  //input_point_amount pull
+  $input_point_amount_query = "SELECT input_point_amount FROM ". $table_name_kremlin . " WHERE id= %d"; //I'm not sure if this is resource optimal but it works. -Felty
+  $input_point_amount_query_prepared = $wpdb->prepare( $input_point_amount_query, $first_row );
+  $input_point_amount = $wpdb->get_var( $input_point_amount_query_prepared );
+
+  //output_point_amount pull
+  $output_point_id_query = "SELECT output_point_id FROM ". $table_name_kremlin . " WHERE id= %d"; //I'm not sure if this is resource optimal but it works. -Felty
+  $output_point_id_query_prepared = $wpdb->prepare( $output_point_id_query, $first_row );
+  $output_point_id = $wpdb->get_var( $output_point_id_query_prepared );
 
 	//multi pull
 	$win_multi_query = "SELECT win_multi FROM ". $table_name_kremlin . " WHERE id= %d"; //I'm not sure if this is resource optimal but it works. -Felty
@@ -99,15 +111,17 @@ function vidyen_kremlin_blocks_menu_page()
 	<table>
 		<form method="post">
 			<tr>
-				<th>Point ID</th>
-				<th>Max Bet</th>
+				<th>Input Point ID</th>
+				<th>Input Point Amount</th>
+        <th>Output Point Amount</th>
 				<th>Win Multi</th>
 				<th>Submit</th>
 			</tr>
 			<tr>
 				<td><input type="number" name="input_point_id" type="number" id="input_point_id" min="1" step="1" value="' . $input_point_id .  '" required="true">
 				<input type="hidden" name="vypsnoncepost" id="vypsnoncepost" value="'. $vyps_nonce_check . '"/></td>
-				<td><input type="number" name="max_bet" type="number" id="max_bet" min="1" max="1000000" step="1" value="' . '1' . '" required="true"></td>
+				<td><input type="number" name="input_point_amount" type="number" id="input_point_amount" min="1" max="1000000" step="1" value="' . $input_point_amount . '" required="true"></td>
+        <td><input type="number" name="output_point_id" type="number" id="output_point_id" min="1" step="1" value="' . $output_point_id .  '" required="true">
 				<td><input type="number" name="win_multi" type="number" id="win_multi" min="0.01" max="10" step=".01" value="' . $win_multi . '" required="true"></td>
 				<td><input type="submit" value="Submit"></td>
 			</tr>
