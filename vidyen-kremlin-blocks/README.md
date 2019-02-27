@@ -1,4 +1,4 @@
-=== VidYen Russian Blocks ===
+=== VidYen Kremlin Blocks ===
 Contributors: vidyen, felty, trof
 Tags: bitcoin,faucet,satoshi,games,poker,visitor rewarder, referrals, tetris, blockrain,2048,lines,minesweeper, video poker, bubble shooter, videopoker,satoshi bonds, shortcode,rain captcha,surfer rewarder,cryptocurrency,crypto-currency,crypto currency,satoshi,BTC,Dogecoin,DOGE,Litecoin,LTC,Ethereum,ETH,Primecoin,XPM,DASH,Peercoin,PPC
 Requires at least: 2.0

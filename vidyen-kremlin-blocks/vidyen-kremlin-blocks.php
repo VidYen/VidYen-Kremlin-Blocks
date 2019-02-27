@@ -1,6 +1,6 @@
 <?php
 /*
- * Plugin Name: VidYen Russian Blocks
+ * Plugin Name: VidYen Kremlin Blocks
  * Plugin URI: http://vidyen.com
  * Description: A Tetris like game for the VidYen Point System
  * Author: VidYen, LLC
@@ -10,4 +10,4 @@
 */
 
 //This might all we need for riht now.
-include_once( dirname(__FILE__) . DIRECTORY_SEPARATOR .  'includes/shortcodes/vidyen-russian-blocks-shortcode.php'); //SBFG_WP_get_poker_init
+include_once( dirname(__FILE__) . DIRECTORY_SEPARATOR .  'includes/shortcodes/vidyen-kremlin-blocks-shortcode.php'); //SBFG_WP_get_poker_init

@@ -5,7 +5,7 @@
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 //Shortcode function
-function vidyen_russian_blocks_shortcode( $atts )
+function vidyen_kremlin_blocks_shortcode( $atts )
 {
   $ret = '';
   $ret .= "\n <link rel='stylesheet' href='" . plugin_dir_url( __FILE__ ) . "blockrain/blockrain.css'>";
@@ -24,4 +24,4 @@ function vidyen_russian_blocks_shortcode( $atts )
 }
 
 //Call to add to WP
-add_shortcode('vidyen-russian-blocks', 'vidyen_russian_blocks_shortcode');
+add_shortcode('vidyen-kremlin-blocks', 'vidyen_kremlin_blocks_shortcode');
