@@ -7,7 +7,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 //Shortcode function
 function vidyen_kremlin_blocks_shortcode( $atts )
 {
-  
+
   if ( ! is_user_logged_in() )
   {
     $kremlin_html_output = ''; //This shows blank as it should. Place your own
@@ -27,6 +27,15 @@ function vidyen_kremlin_blocks_shortcode( $atts )
     $kremlin_html_output .= "\n".'<div class="sfbg_br_game" style="width:250px; height:500px;"></div>';
     $kremlin_html_output .= "\n".'<div id="sfbg_br_faucet-TO-BE" style="display:none;min-width:400px;min-height:400px;"></div></center></div>';
     $kremlin_html_output .= "\n".'<script src="' . plugin_dir_url( __FILE__ ) . 'blockrain/starter.js"></script>';
+
+    $kremlin_html_output .= '<table>
+                              <td>
+                                <tr>Input Balance</tr>
+                              </td>
+                              <td>
+                                <tr><div><span id="input_blance">' . vidyen_kremlin_blocks_input_point_balance() . '</span></div></tr>
+                              </td>
+                            </table>'';
 
     return($kremlin_html_output);
   }

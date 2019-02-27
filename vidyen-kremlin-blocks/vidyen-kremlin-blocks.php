@@ -4,7 +4,7 @@
  * Plugin URI: http://vidyen.com
  * Description: A Tetris like game for the VidYen Point System
  * Author: VidYen, LLC
- * Version: 0.0.9
+ * Version: 0.0.10
  * Author URI: http://vidyen.com
  * License: GPLv2
 */
@@ -60,3 +60,4 @@ include_once( dirname(__FILE__) . DIRECTORY_SEPARATOR .  'includes/shortcodes/vi
 
 //Functions include (I am not sure if this will cause problems)
 include_once( dirname(__FILE__) . DIRECTORY_SEPARATOR .  'includes/functions/vyps-kremlin-blocks-menu-func.php'); //Shortcode includes
+include_once( dirname(__FILE__) . DIRECTORY_SEPARATOR .  'includes/functions/vyps-kremlin-blocks-balance-func.php'); //Shortcode includes
