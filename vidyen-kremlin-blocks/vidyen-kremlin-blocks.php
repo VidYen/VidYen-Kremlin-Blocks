@@ -4,7 +4,7 @@
  * Plugin URI: http://vidyen.com
  * Description: A Tetris like game for the VidYen Point System
  * Author: VidYen, LLC
- * Version: 0.0.14
+ * Version: 0.0.15
  * Author URI: http://vidyen.com
  * License: GPLv2
 */
@@ -59,5 +59,6 @@ include_once( dirname(__FILE__) . DIRECTORY_SEPARATOR .  'vidyen-kremlin-blocks-
 include_once( dirname(__FILE__) . DIRECTORY_SEPARATOR .  'includes/shortcodes/vidyen-kremlin-blocks-shortcode.php'); //Shortcode includes
 
 //Functions include (I am not sure if this will cause problems)
-include_once( dirname(__FILE__) . DIRECTORY_SEPARATOR .  'includes/functions/vyps-kremlin-blocks-menu-func.php'); //Shortcode includes
-include_once( dirname(__FILE__) . DIRECTORY_SEPARATOR .  'includes/functions/vyps-kremlin-blocks-balance-func.php'); //Shortcode includes
+include_once( dirname(__FILE__) . DIRECTORY_SEPARATOR .  'includes/functions/vyps-kremlin-blocks-menu-func.php'); //function for menus
+include_once( dirname(__FILE__) . DIRECTORY_SEPARATOR .  'includes/functions/vyps-kremlin-blocks-balance-func.php'); //function for balance (comments may be redudant)
+include_once( dirname(__FILE__) . DIRECTORY_SEPARATOR .  'includes/functions/vyps-ajax-kremlin-deduct.php'); //First ajax for deduct
