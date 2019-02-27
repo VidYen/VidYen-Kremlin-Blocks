@@ -35,7 +35,7 @@ function vidyen_kremlin_blocks_shortcode( $atts )
                               <td>
                                 <tr><div><span id="input_blance">' . vidyen_kremlin_blocks_input_point_balance() . '</span></div></tr>
                               </td>
-                            </table>'';
+                            </table>';
 
     return($kremlin_html_output);
   }
