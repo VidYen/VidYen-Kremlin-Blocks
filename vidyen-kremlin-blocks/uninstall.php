@@ -30,7 +30,7 @@ global $wpdb;
  * prefixed with $wpdb->prefix from the database
  */
 
-$table_name_poker = $wpdb->prefix . 'videyen_kremlin_blocks';
+$table_name_poker = $wpdb->prefix . 'vidyen_kremlin_blocks';
 
 // drop the table from the database. NOTE: I called each without a loop as this should be very simple and specific. -Felty
 

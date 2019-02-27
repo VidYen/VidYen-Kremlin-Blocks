@@ -4,22 +4,12 @@
  * Plugin URI: http://vidyen.com
  * Description: A Tetris like game for the VidYen Point System
  * Author: VidYen, LLC
- * Version: 0.0.8
+ * Version: 0.0.9
  * Author URI: http://vidyen.com
  * License: GPLv2
 */
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
-
-//Menu Include
-include_once( dirname(__FILE__) . DIRECTORY_SEPARATOR .  'vidyen-kremlin-blocks-menu.php'); //Menu include
-
-//Shortcode include
-include_once( dirname(__FILE__) . DIRECTORY_SEPARATOR .  'includes/shortcodes/vidyen-kremlin-blocks-shortcode.php'); //Shortcode includes
-
-//Functions include (I am not sure if this will cause problems)
-include_once( dirname(__FILE__) . DIRECTORY_SEPARATOR .  'includes/functions/vyps-kremlin-blocks-menu-func.php'); //Shortcode includes
-
 
 register_activation_hook(__FILE__, 'vidyen_kremlin_blocks_sql_install');
 
@@ -59,3 +49,14 @@ function vidyen_kremlin_blocks_sql_install()
 
 		$wpdb->insert($table_name_kremlin, $data_insert);
 }
+
+/*** Includes ***/
+
+//Menu Include
+include_once( dirname(__FILE__) . DIRECTORY_SEPARATOR .  'vidyen-kremlin-blocks-menu.php'); //Menu include
+
+//Shortcode include
+include_once( dirname(__FILE__) . DIRECTORY_SEPARATOR .  'includes/shortcodes/vidyen-kremlin-blocks-shortcode.php'); //Shortcode includes
+
+//Functions include (I am not sure if this will cause problems)
+include_once( dirname(__FILE__) . DIRECTORY_SEPARATOR .  'includes/functions/vyps-kremlin-blocks-menu-func.php'); //Shortcode includes

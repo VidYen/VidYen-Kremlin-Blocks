@@ -10,7 +10,7 @@
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 //Input id
-vidyen_kremlin_blocks_input_point_id()
+function vidyen_kremlin_blocks_input_point_id()
 {
 	global $wpdb; //Just in case needs to be set
 
@@ -36,7 +36,7 @@ vidyen_kremlin_blocks_input_point_id()
 }
 
 //Input id amount
-vidyen_kremlin_blocks_input_point_amount()
+function vidyen_kremlin_blocks_input_point_amount()
 {
 	global $wpdb; //Just in case needs to be set
 
@@ -62,7 +62,7 @@ vidyen_kremlin_blocks_input_point_amount()
 }
 
 //Output id
-vidyen_kremlin_blocks_output_point_id()
+function vidyen_kremlin_blocks_output_point_id()
 {
 	global $wpdb; //Just in case needs to be set
 
@@ -88,7 +88,7 @@ vidyen_kremlin_blocks_output_point_id()
 }
 
 //Win Multi
-vidyen_kremlin_blocks_win_multi()
+function vidyen_kremlin_blocks_win_multi()
 {
 	global $wpdb; //Just in case needs to be set
 
@@ -106,9 +106,9 @@ vidyen_kremlin_blocks_win_multi()
 	$win_multi = floatval($win_multi);
 
 	//Checking to see if it returned a value greater than zero
-	if ($output_point_id > 0)
+	if ($win_multi > 0)
 	{
-		return $output_point_id; //arguably winmulti could be 0 but... well... terrible idea unless admin need to shut it off
+		return $win_multi; //arguably winmulti could be 0 but... well... terrible idea unless admin need to shut it off
 	}
 	//If nothing is found it returns a zero you know
 }
