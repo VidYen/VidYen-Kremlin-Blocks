@@ -29,12 +29,18 @@ function vidyen_kremlin_blocks_shortcode( $atts )
     $kremlin_html_output .= "\n".'<script src="' . plugin_dir_url( __FILE__ ) . 'blockrain/starter.js"></script>';
 
     $kremlin_html_output .= '<table>
-                              <td>
-                                <tr>Input Balance</tr>
+                              <tr>
+                                <td>Input Balance</td>
                               </td>
-                              <td>
-                                <tr><div><span id="input_blance">' . vidyen_kremlin_blocks_input_point_balance() . '</span></div></tr>
+                              <tr>
+                                <td><div><span>'.vidyen_kremlin_blocks_input_point_icon().'</span><span id="input_blance">'.vidyen_kremlin_blocks_input_point_balance().'</span></div></td>
+                              </tr>
+                              <tr>
+                                <td>Output Balance</td>
                               </td>
+                              <tr>
+                                <td><div><span>'.vidyen_kremlin_blocks_output_point_icon().'</span><span id="input_blance">'.vidyen_kremlin_blocks_output_point_balance().'</span></div></td>
+                              </tr>
                             </table>';
 
     return($kremlin_html_output);
