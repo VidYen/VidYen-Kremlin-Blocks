@@ -55,6 +55,7 @@
       this.options.onStart.call(this.element);
       //VidYen Code insert
       //Deduct
+      //Ok obviously this isn't working so will have to figure out tomorrow. May need to move to the doStart() as seems to do both
       jQuery(document).ready(function($) {
        var data = {
          'action': 'vyps_kremlin_run_deduct_action',
