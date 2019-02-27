@@ -9,7 +9,7 @@
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
-function vidyen_poker_balance_func()
+function vidyen_kremlin_blocks_input_point_balance()
 {
 	global $wpdb; //Seeing if this needs to be moved up
 
@@ -21,9 +21,7 @@ function vidyen_poker_balance_func()
 	}
 
 	//$pointID = $atts['pid'];
-	$pointID = vyps_poker_pid_pull(); //This is my $wpdb function to the pid
-	$maximum_bet = vyps_poker_max_bet_pull(); //This is the $wpdb call to the max bet WCCW
-	$win_multi = vyps_poker_multi_pull(); //Win multi for adjust winnings
+	$pointID = vidyen_kremlin_blocks_input_point_id(); //This is my $wpdb function to the pid
 	$userID = get_current_user_id();
 	$decimal_format_modifier = 0; //This has to be a int or will throw the number format
 
@@ -59,14 +57,14 @@ function vidyen_poker_balance_func()
 
 	$balance_output = intval($balance_points); //Just the raw data please. No formatting. NOTE: Youy will have to call for it if you use this function. Hrm... Maybe that should be at top.
 
-	$_SESSION['vidyen_max_bet'] = $maximum_bet; //This is the max bet to session
-	$_SESSION["cm_balance"] = $balance_output; //This is balance
-
-	//I feel this is good as any to call this function
-	$_SESSION['vidyen_win_multi'] = $win_multi;
-
 	//Out it goes!
 	return $balance_output;
 }
 
-add_shortcode('vidyen-video-poker-balance', 'vidyen_poker_balance_func');
+function vidyen_kremlin_blocks_balance()
+{
+ $ret = vidyen_kremlin_blocks_input_point_balance();
+ return($ret); //Yeah following their amoutn for debug	
+}
+
+add_shortcode('vidyen-kremlin-blocks-balance', 'vidyen_kremlin_blocks_balance');
