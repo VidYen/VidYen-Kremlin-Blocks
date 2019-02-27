@@ -107,13 +107,13 @@ function vidyen_kremlin_blocks_menu_page()
 	$vidyen_kremlin_blocks_menu_html_ouput =
 	'<br><br><img src="' . $vidyen_kremlin_blocks_logo_url . '">
 	<h1>VidYen Kremlin Blocks Sub-Plugin</h1>
-	<p>The Video poker!</p>
+	<p>The Russian Block Game!</p>
 	<table>
 		<form method="post">
 			<tr>
 				<th>Input Point ID</th>
 				<th>Input Point Amount</th>
-        <th>Output Point Amount</th>
+        <th>Output Point ID</th>
 				<th>Win Multi</th>
 				<th>Submit</th>
 			</tr>
