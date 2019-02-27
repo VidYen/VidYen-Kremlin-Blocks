@@ -35,7 +35,7 @@ function videyen_kremlin_blocks_sql_install()
     $sql = "CREATE TABLE {$table_name_kremlin} (
   		id mediumint(9) NOT NULL AUTO_INCREMENT,
   		input_point_id mediumint(9) NOT NULL,
-      input_amount mediumint(9) NOT NULL,
+      input_point_amount mediumint(9) NOT NULL,
       output_point_id mediumint(9) NOT NULL,
   		win_multi float(53) NOT NULL,
   		PRIMARY KEY  (id)
